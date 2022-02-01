@@ -1,0 +1,63 @@
+#settings_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+
+    // width: 100%;
+    // height: 100%;
+    #settings {
+        background: #e2e2e2;
+        box-shadow: 0 0 5px 0 #333;
+        width: 600px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        bottom: 0;
+        right: 0;
+        margin-left: -300px;
+        margin-top: -200px;
+        // transform: translate(-50%, -50%); /* 50%为自身尺寸的一半 */
+
+        #settings_titlebar {
+            background: #ffffff;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            #titlebar_buttons {
+                height: 30px;
+                // background: #329ea3;
+                user-select: none;
+                display: flex;
+                justify-content: flex-end;
+                // align-items: flex-end;
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+
+                .titlebar_button {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 48px;
+                    height: 30px;
+
+                    &.close:hover {
+                        background: rgb(215, 21, 38);
+                    }
+                    &:hover {
+                        background: rgb(229,229,229);
+                    }
+                }
+            }
+        }
+    }
+}

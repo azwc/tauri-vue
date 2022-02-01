@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+
+    user-select: none;
+
+    body {
+        min-height: 100%;
+
+        a {
+            text-decoration: none;
+        }
+        button {
+            outline: none;
+            border: 0;
+        }
+        span {
+            display: block;
+            line-height: inherit;
+        }
+
+        #app {
+            font-family: Avenir, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #2c3e50;
+
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
+            #main_window {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                #client_area {
+                    position: absolute;
+                    top: 30px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: calc(100% - 30px);
+
+                    #left_side {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        width: 200px;
+
+                        #nav {
+                            height: calc(100% - 30px);
+                            a {
+                                display: block;
+                                height: 35px;
+                                line-height: 35px;
+                                font-weight: bold;
+                                color: #2c3e50;
+
+                                &.router-link-exact-active {
+                                    background-color: #e2e2e2;
+                                    color: #42b983;
+                                }
+                            }
+                        }
+                        #settings_tools {
+                            position: absolute;
+                            left: 0;
+                            width: 100%;
+                            height: 30px;
+                            bottom: 0;
+
+                            .tools_buttons {
+                                display: flex;
+                                height: inherit;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                justify-content: flex-start;
+                                align-items: center;
+
+                                .tools_button {
+                                    display: inline-flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 30px;
+                                    height: 30px;
+                                    &.disabled:hover {
+                                        background: #ccc;
+                                        cursor: not-allowed;
+                                    }
+                                    &:hover {
+                                        // background: #e2e2e2;
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #right_side {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 200px;
+                        bottom: 0;
+                        background-color: #e2e2e2;
+
+                        #content_container {
+                            width: 100%;
+                            height: 100%;
+                            overflow-y: scroll;
+
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            #titlebar {
+                // width: 100%;
+                // height: 30px;
+
+                #titlebar_buttons {
+                    height: 30px;
+                    // background: #329ea3;
+                    user-select: none;
+                    display: flex;
+                    justify-content: flex-end;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+
+                    .titlebar_button {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 48px;
+                        height: 30px;
+
+                        &.close:hover {
+                            background: rgb(215, 21, 38);
+                        }
+                        &:hover {
+                            background: rgb(229,229,229);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+}
